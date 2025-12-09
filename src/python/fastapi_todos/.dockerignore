@@ -1,0 +1,7 @@
+.git/
+.gitignore
+__pycache__/
+data/
+database.db
+LICENSE
+README.md

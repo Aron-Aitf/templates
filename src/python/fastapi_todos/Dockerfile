@@ -4,7 +4,23 @@ WORKDIR /main
 
 COPY . .
 
-RUN pip install --no-cache-dir --upgrade --root-user-action ignore pip && pip install --no-cache-dir --root-user-action ignore "fastapi[standard]" sqlmodel psycopg2-binary semver pydantic_extra_types
+RUN \
+pip install \
+    --no-cache-dir \
+    --upgrade \
+    --root-user-action ignore \
+        pip \
+&& pip install \
+    --no-cache-dir \
+    --upgrade \
+    --root-user-action ignore \
+        "fastapi[standard]" \
+        sqlmodel \
+        psycopg2-binary \
+        semver \
+        pydantic_extra_types \
+        pydantic_settings
+
 
 CMD ["fastapi", "run", "src/main.py", "--workers", "17"]
 

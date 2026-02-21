@@ -1,13 +1,14 @@
 from fastapi import FastAPI
 
 from config import config
+
 from routers.meta_router import router as meta_router
 
 
 app = FastAPI(
     swagger_ui_parameters={"tryItOutEnabled": True},
     title=config.docs.title,
-    debug=True,
+    debug=config.app.debug,
     version=str(config.docs.version),
     description=config.docs.description,
 )

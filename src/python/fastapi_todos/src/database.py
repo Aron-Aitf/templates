@@ -3,7 +3,7 @@ from sqlmodel import SQLModel, Session, create_engine
 from config import config
 
 # forces the models to load before making the tables
-import models as _
+import models as _  # noqa: F401
 
 if config.database.use_local_database:
     engine = create_engine(

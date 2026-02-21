@@ -19,6 +19,8 @@ class DocsConfig(BaseSettings):
 
 class AppConfig(BaseSettings):
     debug: bool = True
+    log_requests: bool = True
+
 
 class Config(BaseSettings):
     app: AppConfig
